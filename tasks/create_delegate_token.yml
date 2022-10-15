@@ -1,0 +1,13 @@
+---
+- name: Make a POST call to create Delegate Token
+  ansible.builtin.uri:
+    url: "{{ full_url }}"
+    method: POST
+    headers:
+      x-api-key: "{{ api_token }}"
+      Content-Type: 'application/json'
+    status_code: 200
+    return_content: true
+  vars:
+    endpoint_url: 'https://app.harness.io/gateway/ng/api/delegate-token-ng'
+    full_url: "{{ endpoint_url }}?accountIdentifier={{ account_id }}&orgIdentifier={{ org_id }}&projectIdentifier={{ project_id }}&tokenName={{ token_name }}"
