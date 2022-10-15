@@ -1,0 +1,18 @@
+---
+- name: Create Delegate Token and Download Delegate k8s Manifest
+  hosts: localhost
+  gather_facts: false
+  connection: local
+
+  tasks:
+    - name: Include config.yml vars file
+      ansible.builtin.include_vars:
+        file: vars/config.yml
+
+    - name: Include create_delegate_token.yml tasks file
+      ansible.builtin.include_tasks: tasks/create_delegate_token.yml
+      tags:
+        - delegate_token
+
+    - name: Include download_delegate_k8s.yml tasks file
+      ansible.builtin.include_tasks: tasks/download_delegate_k8s.yml
