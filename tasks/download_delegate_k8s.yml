@@ -17,18 +17,24 @@
     body_content:
       name: "{{ delegate_name }}"
       description: "Ansible Created Delegate"
-      size: "LAPTOP"
+      size: "{{ delegate_size | default('LAPTOP', true) }}"
       tags:
         - "{{ delegate_name }}"
       tokenName: "{{ token_name }}"
       clusterPermissionType: "CLUSTER_ADMIN"
       customClusterNamespace: "string"
+  tags:
+    - download-manifest
+    - download-deploy
 
 - name: Create manifests directory
   ansible.builtin.file:
     path: manifests
     state: directory
     mode: '0755'
+  tags:
+    - download-manifest
+    - download-deploy
 
 - name: Create harness-delegate.yml file
   ansible.builtin.copy:
@@ -36,3 +42,7 @@
     dest: manifests/harness-delegate.yml
     mode: 0600
     force: true
+  register: manifest_path
+  tags:
+    - download-manifest
+    - download-deploy

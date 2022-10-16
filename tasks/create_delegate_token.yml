@@ -11,3 +11,5 @@
   vars:
     endpoint_url: 'https://app.harness.io/gateway/ng/api/delegate-token-ng'
     full_url: "{{ endpoint_url }}?accountIdentifier={{ account_id }}&orgIdentifier={{ org_id }}&projectIdentifier={{ project_id }}&tokenName={{ token_name }}"
+  tags:
+    - delegate-token
