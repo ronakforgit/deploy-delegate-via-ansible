@@ -2,7 +2,7 @@
 # Up and Running Harness Delegate via Ansible in less than a Minute🚀
 This repository contains Ansible playbooks that'll create Delegate Token and download the Delegate K8S Manifest file by making API calls to Harness NG REST API. You can also use the existing Delegate Token to download the manifest file.
 
-## Requirements 
+## Requirements
 - ansible-core <= 2.12.0
 ```bash
 pip3 install ansible-core
@@ -10,15 +10,16 @@ pip3 install ansible-core
 
 - Create Harness API Key and PAT (Click [here](https://docs.harness.io/article/f0aqiv3td7-api-quickstart#step_1_create_a_harness_api_key_and_pat) for details)
 
-## Dependencies 
+## Dependencies
 - Python 3.9.0 or higher
 
 ## Repo Structure
 - tasks/
     - create_delegate_token.yml - Creates Delegate Token
-    - download_delegate_k8s.yml - Download Delegate K8S Manifest file
+    - download_delegate_k8s.yml - Downloads Delegate K8S Manifest file
+    - deploy_delegate_on_k8s.yml - Deploys Delegate to K8S infra
 - vars/
-    - config.yml - Required variables to interact with the Harness NG API endpoint
+    - config.yml - Required variables to authenticate and interact with the Harness NG API endpoint
 
 ## Usage
 1. Use your favorite editor to open [vars/config.yml](vars/config.yml) and add Harness API PAT, Account Id, Org ID, Project ID, Delegate Token Name & Delegate Name values to respective variables.
