@@ -1,5 +1,5 @@
 ![ansible-harness](https://user-images.githubusercontent.com/21008429/196006970-aa007493-cb3c-449d-a9e0-e908fd7e0936.svg)
-# Up and Running Harness Delegate via Ansible in less than 1 Minute🚀
+# Up and Running Harness Delegate via Ansible in less than a Minute🚀
 This repository contains Ansible playbooks that'll create Delegate Token and download the Delegate K8S Manifest file by making API calls to Harness NG REST API. You can also use the existing Delegate Token to download the manifest file.
 
 ## Requirements 
