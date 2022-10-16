@@ -4,5 +4,4 @@
     state: present
     src: "{{ manifest_path.dest }}"
     kubeconfig: "{{ kubeconfig | default('~/.kube/config', true) }}"
-  tags:
-    - download-deploy
+

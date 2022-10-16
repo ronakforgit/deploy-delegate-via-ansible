@@ -8,8 +8,6 @@
     - name: Include config.yml vars file
       ansible.builtin.include_vars:
         file: vars/config.yml
-      tags:
-        - always
 
     - name: Include create_delegate_token.yml tasks file
       ansible.builtin.include_tasks: tasks/create_delegate_token.yml
@@ -18,6 +16,7 @@
 
     - name: Include download_delegate_k8s.yml tasks file
       ansible.builtin.include_tasks: tasks/download_delegate_k8s.yml
-      tags:
-        - download-manifest
-        - download-deploy
+
+    - name: Include download_delegate_k8s.yml tasks file
+      ansible.builtin.include_tasks: tasks/deploy_delegate_on_k8s.yml
+
